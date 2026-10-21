@@ -40,3 +40,9 @@ selection:
 mlflow:
   tracking_uri: sqlite:///mlflow.db
   experiment: fishgrow-lab02
+
+bootstrap:                           # дополнительная часть: src/bootstrap.py
+  n_resamples: 10000
+  seed: 42
+  confidence: 0.95
+  interval_levels: [0.8, 0.95]       # уровни интервалов прогноза

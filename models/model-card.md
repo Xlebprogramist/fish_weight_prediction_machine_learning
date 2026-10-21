@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | Запуск | `e1_esharma3` (конфигурация `configs/experiments/e1_esharma3.yaml`) |
-| Коммит кода | `e0f7e93` (ветка `lab/02-regression`) |
+| Коммит кода | `e0f7e93` — таблица результатов; `5c4fa8b` — журнал MLflow (ветка `lab/02-regression`) |
 | Файл модели | `models/model.joblib` после `python -m src.train --all`; в MLflow — артефакт `model` запуска с тегом `selected=true` |
 | Данные | `data/fish_participant.csv`, SHA-256 `3b9dfeca…6f9d04`, разбиение `data/split.json` |
 | Автор | Глеб Осипов, ПетрГУ, 2026 |

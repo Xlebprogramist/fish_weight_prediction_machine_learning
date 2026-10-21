@@ -4,7 +4,7 @@
 **Студент:** Глеб Осипов, ПетрГУ, 2026  
 **Ветка:** `lab/02-regression`  
 **Исходный репозиторий:** https://github.com/esharma3/fish_weight_prediction_machine_learning (коммит `c948d7f`)  
-**Коммит, на котором получены метрики:** `e0f7e93` (записан в столбце `git_commit` таблицы `reports/lab02-results.csv` и в тегах MLflow)
+**Коммиты, на которых получены метрики:** `e0f7e93` — таблица `reports/lab02-results.csv` (Linux x86_64, столбец `git_commit`); `5c4fa8b` — журнал MLflow `reports/mlflow/` (macOS arm64, тег `git.commit`). Между ними менялись только тесты, логирование модели в MLflow и документация; метрики совпадают (см. раздел 7)
 
 ---
 

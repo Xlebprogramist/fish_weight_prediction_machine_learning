@@ -1,0 +1,90 @@
+e1_esharma3: метрики теста воспроизведены сохранённой моделью: {'mse': 1429.2890689727908, 'mae': 23.75438101874093, 'r2': 0.9862779240989865}
+
+== zones_oof
+                              size   mean    std
+prediction_bin                                  
+(7.311999999999999, 118.703]    18   0.07   5.38
+(118.703, 206.203]              17   0.45  16.46
+(206.203, 452.284]              18   4.05  24.87
+(452.284, 722.488]              17  13.60  78.57
+(722.488, 1345.473]             18  -6.31  90.30
+
+== top_errors_oof
+    Species  Weight  Length1  Length2  ...  Width  prediction  residual  abs_error
+row                                    ...                                        
+13     Pike  1550.0     56.0     60.0  ...   6.14     1345.47    204.53     204.53
+68    Bream   340.0     29.5     32.0  ...   5.07      521.95   -181.95     181.95
+41    Perch  1000.0     40.2     43.5  ...   8.14     1158.54   -158.54     158.54
+4     Bream   700.0     30.4     33.0  ...   5.29      544.20    155.80     155.80
+6     Bream   700.0     30.4     33.0  ...   5.20      557.54    142.46     142.46
+
+[5 rows x 10 columns]
+
+== top_errors_test
+    Species  Weight  Length1  Length2  ...  Width  prediction  residual  abs_error
+row                                    ...                                        
+24    Perch  1100.0     39.0     42.0  ...   6.87      993.35    106.65     106.65
+84     Pike  1250.0     52.0     56.0  ...   6.98     1329.93    -79.93      79.93
+17    Bream   500.0     29.1     31.5  ...   4.37      432.65     67.35      67.35
+47    Bream   685.0     31.4     34.0  ...   5.37      625.62     59.38      59.38
+21    Bream   650.0     31.0     33.5  ...   5.73      597.35     52.65      52.65
+
+[5 rows x 10 columns]
+
+== mae_by_species_oof
+            n    mae  mean_residual  mean_weight  relative_mae_%
+Species                                                         
+Bream      19  56.16           5.26       605.05            9.28
+Parkki      6   9.74          -0.28       165.83            5.87
+Perch      31  28.54          -2.23       449.03            6.36
+Pike       10  57.70          11.67       614.10            9.40
+Roach      11  14.28          -0.57       158.64            9.00
+Smelt       8   1.01          -0.52        11.09            9.13
+Whitefish   3  47.22          21.30       603.33            7.83
+
+== mae_by_species_test
+           n    mae  mean_residual  mean_weight  relative_mae_%
+Species                                                        
+Bream      5  41.75          30.00       575.60            7.25
+Parkki     2   1.82           1.78       164.00            1.11
+Perch      8  21.60          19.45       305.38            7.07
+Pike       2  55.21         -55.21       908.50            6.08
+Roach      3  16.28         -16.28       212.67            7.65
+Smelt      2   0.88           0.88         8.25           10.70
+Whitefish  1   0.15          -0.15       270.00            0.05
+
+== mae_by_weight_oof
+            n    mae  mean_residual  mean_weight  relative_mae_%
+Weight                                                          
+<100 г     14   2.09           0.08        26.69            7.82
+100–300 г  27  13.63          -2.28       170.67            7.99
+300–700 г  24  34.82          -8.46       449.17            7.75
+≥700 г     23  72.23          20.12       888.43            8.13
+
+== mae_by_weight_test
+           n    mae  mean_residual  mean_weight  relative_mae_%
+Weight                                                         
+<100 г     5   3.03          -1.29        48.70            6.22
+100–300 г  9   8.15           4.86       218.00            3.74
+300–700 г  7  38.75          12.50       547.86            7.07
+≥700 г     2  93.29          13.36      1175.00            7.94
+
+== отрицательные прогнозы
+                run  part   n  n_negative  min_prediction  n_nonfinite
+6            e1_ols   oof  88          12         -455.47            0
+7            e1_ols  test  23           3          -92.70            0
+18    e4_ols_vproxy   oof  88           5         -119.24            0
+19    e4_ols_vproxy  test  23           1          -15.31            0
+24  e4_ridge_vproxy   oof  88           4         -134.42            0
+25  e4_ridge_vproxy  test  23           1          -17.21            0
+
+VIF:
+         VIF_raw  VIF_raw_plus_Vproxy  VIF_log1p  VIF_log1p_plus_Vproxy
+Height      14.4                 20.4       17.5                  135.1
+Length1   1557.3               1576.9     1138.8                 1595.0
+Length2   2091.7               2091.7     1589.0                 2077.4
+Length3    417.6                434.3      436.4                  507.9
+V_proxy      NaN                  9.6        NaN                  812.6
+Width       12.0                 12.2       21.8                  112.2
+
+Бройш — Паган (e1_esharma3, остатки на train): {'bp_lm': 15.749382127850229, 'bp_df': 9, 'bp_pvalue': 0.0723032060707903}

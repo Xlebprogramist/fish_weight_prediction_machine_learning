@@ -13,6 +13,21 @@ from src.config import load_config
 from src.data import PROJECT_ROOT
 
 OUT = PROJECT_ROOT / "reports" / "mlflow"
+# служебные поля MLflow с локальной информацией о машине, в репозиторий не выгружаются
+DROP_COLUMNS = ["tags.mlflow.user"]
+
+
+def relativize(runs, root=PROJECT_ROOT):
+    """Заменяет абсолютные пути внутри проекта на относительные и убирает имя пользователя."""
+    prefixes = [f"file://{root}/", f"{root}/"]
+    runs = runs.drop(columns=[c for c in DROP_COLUMNS if c in runs.columns])
+    for col in runs.columns:
+        if runs[col].dtype == object or str(runs[col].dtype) in ("str", "string"):
+            values = runs[col].astype("string")
+            for prefix in prefixes:
+                values = values.str.replace(prefix, "", regex=False)
+            runs[col] = values
+    return runs
 
 
 def main() -> None:
@@ -30,7 +45,7 @@ def main() -> None:
     runs = mlflow.search_runs(
         experiment_ids=[experiment.experiment_id], order_by=["attributes.start_time ASC"]
     )
-    runs.to_csv(OUT / "runs.csv", index=False)
+    relativize(runs).to_csv(OUT / "runs.csv", index=False)
 
     def walk(run_id: str, path: str = "", depth: int = 1) -> list[str]:
         lines = []

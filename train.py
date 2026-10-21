@@ -27,7 +27,7 @@ from joblib import dump
 # 							     MAIN 											#
 ################################################################################
 
-df = pd.read_csv("fish_participant.csv")
+df = pd.read_csv("data/fish_participant.csv")
 
 df = handle_outlier(df)
 

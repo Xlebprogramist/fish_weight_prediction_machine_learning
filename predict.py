@@ -27,13 +27,13 @@ def predict_from_csv(path_to_csv):
 
 
 ################################################################################################
-#                          Testing using "fish_holdout_demo.csv"                               #
+#                          Testing using "data/fish_holdout_demo.csv"                               #
 ################################################################################################
 
 if __name__ == "__main__":
 
-    predictions = predict_from_csv("fish_holdout_demo.csv")
-    y_truth = pd.read_csv("fish_holdout_demo.csv")["Weight"].values
+    predictions = predict_from_csv("data/fish_holdout_demo.csv")
+    y_truth = pd.read_csv("data/fish_holdout_demo.csv")["Weight"].values
 
     ho_mse = mean_squared_error(y_truth, predictions)
     r2_score = r2_score(y_truth, predictions)

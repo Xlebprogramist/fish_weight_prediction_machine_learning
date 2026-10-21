@@ -39,6 +39,40 @@ RESULTS = PROJECT_ROOT / "reports" / "lab02-results.csv"
 WEIGHT_BINS = [0, 100, 300, 700, np.inf]
 WEIGHT_LABELS = ["<100 г", "100–300 г", "300–700 г", "≥700 г"]
 SHOW = ["Species", TARGET, *NUMERIC, "prediction", "residual"]
+# Парные сравнения на одних и тех же 15 разбиениях CV: (базовая версия, изменённая версия)
+PAIRS = [
+    ("e1_ols", "e4_ols_vproxy"),
+    ("e1_ols", "e4_ridge_vproxy"),
+    ("e1_ols", "e4_ols_vproxy_only"),
+    ("e2_ridge_loglog", "e4_ridge_loglog_vproxy"),
+    ("e1_ols", "e1_ols_log1p_y"),
+    ("e1_ols", "e1_ols_loglog"),
+    ("e1_ols_loglog", "e2_ridge_loglog"),
+    ("e1_esharma3", "e1_ols_loglog"),
+    ("e1_esharma3", "e2_ridge_loglog"),
+    ("e1_esharma3", "e3_random_forest"),
+    ("e1_esharma3", "e3_hist_gb"),
+]
+
+
+def paired_cv() -> pd.DataFrame:
+    """Разность MSE по разбиениям (B − A): отрицательное среднее — B лучше."""
+    rows = []
+    for a, b in PAIRS:
+        fa = pd.read_csv(RUNS / a / "cv_folds.csv")["mse"]
+        fb = pd.read_csv(RUNS / b / "cv_folds.csv")["mse"]
+        d = fb - fa
+        rows.append(
+            {
+                "A": a,
+                "B": b,
+                "delta_mse_mean": round(float(d.mean()), 1),
+                "delta_mse_std": round(float(d.std(ddof=1)), 1),
+                "relative_change_%": round(float(100 * d.mean() / fa.mean()), 1),
+                "B_better_folds": f"{int((d < 0).sum())}/{len(d)}",
+            }
+        )
+    return pd.DataFrame(rows)
 
 
 def by_group(pred: pd.DataFrame, key: str | pd.Series) -> pd.DataFrame:
@@ -169,6 +203,10 @@ def main() -> None:
     negatives = pd.DataFrame(rows)
     negatives.to_csv(TABLES / "lab02-negative-predictions.csv", index=False)
     print(f"\n== отрицательные прогнозы\n{negatives[negatives['n_negative'] > 0]}")
+
+    paired = paired_cv()
+    paired.to_csv(TABLES / "lab02-paired-cv.csv", index=False)
+    print(f"\n== парные сравнения по разбиениям CV\n{paired}")
 
     # 4. диагностика линейной модели
     if (run_dir / "coefficients.csv").exists():

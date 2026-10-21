@@ -50,6 +50,21 @@ def main() -> None:
         )
         lines.extend(walk(row["run_id"]))
         lines.append("")
+    # MLflow 3 хранит сохранённые модели отдельно от артефактов запуска
+    try:
+        models = mlflow.search_logged_models(
+            experiment_ids=[experiment.experiment_id], output_format="list"
+        )
+    except AttributeError:  # MLflow 2.x: модель лежит в артефактах запуска
+        models = []
+    if models:
+        names = dict(zip(runs["run_id"], runs["tags.mlflow.runName"], strict=False))
+        lines.append("logged models (mlflow.sklearn.log_model):")
+        for m in models:
+            lines.append(
+                f"    {m.name}  model_id={m.model_id}  "
+                f"run={names.get(m.source_run_id, m.source_run_id)}"
+            )
     (OUT / "structure.txt").write_text("\n".join(lines), encoding="utf-8")
     print(f"{len(runs)} запусков -> {OUT.relative_to(PROJECT_ROOT)}")
 

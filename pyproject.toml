@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]   # корень проекта в sys.path, чтобы `pytest` находил пакет src
 addopts = "-q"
 
 [tool.ruff]

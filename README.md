@@ -26,11 +26,12 @@ pip install -r requirements-course.txt
 Все команды — из корня репозитория.
 
 ```bash
-pytest                              # 17 быстрых тестов, ~3 с, без полного обучения
+pytest                              # 20 быстрых тестов, ~3 с, без полного обучения
 ruff check src tests                # статическая проверка
 python -m src.train --all           # E0–E4: CV, подбор, тест, запись в MLflow, ≈ 2 мин
 python -m src.evaluate              # пересчёт метрик сохранённой моделью + анализ ошибок
 python -m src.export_mlflow         # выгрузка метаданных MLflow в reports/mlflow/
+python -m src.bootstrap             # доп. часть: доверительные интервалы и интервалы прогноза, ≈ 4 с
 ```
 
 Что получится:
@@ -89,8 +90,9 @@ print(model.predict(fish))          # масса в граммах
 │   ├── metrics.py               # MSE, MAE, R², VIF, тест Бройша — Пагана
 │   ├── train.py                 # обучение, CV, подбор, MLflow
 │   ├── evaluate.py              # анализ ошибок, проверка сохранённой модели
+│   ├── bootstrap.py             # доп. часть: bootstrap-интервалы, интервалы прогноза
 │   ├── tracking.py  plots.py  export_mlflow.py
-├── tests/                       # test_data.py, test_pipeline.py
+├── tests/                       # test_data.py, test_pipeline.py, test_bootstrap.py
 ├── notebooks/02-analysis.ipynb  # только чтение результатов
 ├── reports/
 │   ├── lab02-report.md          # отчёт

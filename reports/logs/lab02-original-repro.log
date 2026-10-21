@@ -1,0 +1,29 @@
+# python Python 3.13.16, sklearn 1.9.1, 2026-10-21T16:23:56Z
+$ python predict.py   # исходный reg.joblib
+    tags.input_tags.sparse = not self.positive
+                                 ^^^^^^^^^^^^^
+AttributeError: 'LinearRegression' object has no attribute 'positive'
+
+$ python train.py
+13    1550.0
+Name: Weight, dtype: float64
+13    56.0
+Name: Length1, dtype: float64
+13    60.0
+Name: Length2, dtype: float64
+Series([], Name: Length3, dtype: float64)
+Series([], Name: Height, dtype: float64)
+Series([], Name: Width, dtype: float64)
+
+$ python predict.py   # после train.py
+[ 140.   150.     9.8  430.   456.   169.   567.     8.7  340.   320.
+  500.   188.   260.    70.   363.   500.     5.9  700.   125.    87.
+  272.  1000.   170.  1000.   720.  1100.   100.   160. ]
+[ 141.53528936  137.17852509   10.12626157  399.40650094  469.4387095
+  187.42435482  594.25848889    9.29264403  510.89933112  312.13902242
+  443.86368611  191.79038263  242.45349936   65.6818898   369.58982717
+  486.48079047    6.89624947  575.07850045  121.84088834   96.31266179
+  286.28034047  937.32088921  157.4549512  1015.392567    738.93998546
+ 1006.42499254   82.50043526  144.08813491]
+2330.6218853723663
+0.9750398152487014

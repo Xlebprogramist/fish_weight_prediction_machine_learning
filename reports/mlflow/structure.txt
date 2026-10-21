@@ -178,3 +178,18 @@ e4_ridge_vproxy-5c4fa8b-20261021-204641  run_id=60a5eea0ed1a430c998abaa6ad43861f
         predictions_test.csv
         residuals.png
         tags.json
+
+logged models (mlflow.sklearn.log_model):
+    model  model_id=m-76b85e27aacd4fde8072b107a6af3396  run=e4_ridge_vproxy-5c4fa8b-20261021-204641
+    model  model_id=m-42f1781269f14b6c93d34793479643d6  run=e4_ridge_loglog_vproxy-5c4fa8b-20261021-204639
+    model  model_id=m-f3b522b6be49493c9584918904909c30  run=e4_ols_vproxy_only-5c4fa8b-20261021-204636
+    model  model_id=m-2b7347c60ed54449984bc38dc67bcbd5  run=e4_ols_vproxy-5c4fa8b-20261021-204635
+    model  model_id=m-a4dd71a8d144465caa82ac995e58effe  run=e3_random_forest-5c4fa8b-20261021-204633
+    model  model_id=m-ad2545267f604d2ca2314fbe9850163e  run=e3_hist_gb-5c4fa8b-20261021-204617
+    model  model_id=m-3e81853f37154e7fa348c88863ea1111  run=e2_ridge_loglog-5c4fa8b-20261021-204549
+    model  model_id=m-935f7edb4a5c4883970e7655fc40411e  run=e1_ols_loglog-5c4fa8b-20261021-204547
+    model  model_id=m-73809a13262d4204900213c6b85645e7  run=e1_ols_log1p_y-5c4fa8b-20261021-204545
+    model  model_id=m-0d49101acd9f4f0eb21c18beab99064d  run=e1_ols-5c4fa8b-20261021-204543
+    model  model_id=m-d8d0f3f70c254c20a6c6cc984c3ca960  run=e1_esharma3-5c4fa8b-20261021-204542
+    model  model_id=m-53b2d9f01ae94948876c6262841d0cac  run=e0_median-5c4fa8b-20261021-204540
+    model  model_id=m-21cd2b24713b415992f0d98509cbfcf7  run=e0_mean-5c4fa8b-20261021-204537

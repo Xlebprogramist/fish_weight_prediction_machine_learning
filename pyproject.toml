@@ -1,0 +1,19 @@
+[project]
+name = "fishgrow-regression"
+version = "0.1.0"
+description = "FishGrow, ЛР2: воспроизводимая регрессионная модель массы рыбы и учёт экспериментов в MLflow"
+requires-python = ">=3.13"
+# Зависимости зафиксированы в requirements-course.txt.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+# исходные скрипты проекта esharma3 и его блокнот оставлены без изменений
+extend-exclude = ["train.py", "predict.py", "preprocess.py", "*.ipynb"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "NPY"]

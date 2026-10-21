@@ -1,0 +1,7 @@
+extends: configs/base.yaml
+id: E0_mean
+run_name: e0_mean
+question: "Наивный ориентир: прогноз среднего обучающей выборки."
+model:
+  name: dummy
+  params: {strategy: mean}

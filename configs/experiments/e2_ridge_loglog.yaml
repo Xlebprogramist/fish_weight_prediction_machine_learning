@@ -1,0 +1,12 @@
+extends: configs/base.yaml
+id: E2_ridge_loglog
+run_name: e2_ridge_loglog
+question: "Гребневая регрессия в лог-лог шкале; alpha выбирается по CV внутри обучающей выборки."
+features:
+  numeric_transform: log1p
+target:
+  transform: log1p
+model:
+  name: ridge
+  grid:
+    alpha: [0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0, 100.0]

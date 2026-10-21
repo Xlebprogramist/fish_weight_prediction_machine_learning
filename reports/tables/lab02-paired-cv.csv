@@ -1,0 +1,12 @@
+A,B,delta_mse_mean,delta_mse_std,relative_change_%,B_better_folds
+e1_ols,e4_ols_vproxy,-8489.2,7125.3,-56.4,14/15
+e1_ols,e4_ridge_vproxy,-8750.5,6734.8,-58.1,14/15
+e1_ols,e4_ols_vproxy_only,-5857.5,6906.4,-38.9,12/15
+e2_ridge_loglog,e4_ridge_loglog_vproxy,93.2,1010.3,2.8,7/15
+e1_ols,e1_ols_log1p_y,13876.6,31107.2,92.2,5/15
+e1_ols,e1_ols_loglog,-11699.1,9186.0,-77.7,14/15
+e1_ols_loglog,e2_ridge_loglog,-83.0,965.3,-2.5,8/15
+e1_esharma3,e1_ols_loglog,64.5,669.6,2.0,4/15
+e1_esharma3,e2_ridge_loglog,-18.5,1309.6,-0.6,7/15
+e1_esharma3,e3_random_forest,5747.4,10953.9,174.8,5/15
+e1_esharma3,e3_hist_gb,6171.1,9086.4,187.7,2/15

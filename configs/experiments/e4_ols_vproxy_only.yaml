@@ -1,0 +1,9 @@
+extends: configs/base.yaml
+id: E4_ols_vproxy_only
+run_name: e4_ols_vproxy_only
+question: "E4, вариант замены: V_proxy вместо группы пяти измерений (+ Species), МНК в граммах."
+features:
+  numeric: []
+  volume_proxy: true
+model:
+  name: linear

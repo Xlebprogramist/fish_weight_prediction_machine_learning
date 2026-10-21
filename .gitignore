@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# окружение и секреты
+.venv/
+venv/
+.env
+
+# временные результаты запусков (воспроизводятся командой из README)
+runs/*
+!runs/.gitkeep
+
+# локальный журнал MLflow; в репозиторий кладётся экспорт reports/mlflow/
+mlruns/
+mlflow.db
+
+# обученные модели воспроизводятся train.py и сохраняются в MLflow
+models/*.joblib
+
+.DS_Store

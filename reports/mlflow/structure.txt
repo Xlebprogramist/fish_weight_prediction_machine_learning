@@ -1,0 +1,195 @@
+experiment: fishgrow-lab02 (id 1)
+
+e0_mean-5c4fa8b-20261021-204537  run_id=f2b3d185350e4a878c08cfd6c9d0e204  commit=5c4fa8b  cv_mse=119094.5  test_mse=106322.9
+    run/
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e0_median-5c4fa8b-20261021-204540  run_id=8bb217c752cf4126b30044fc05a4dd9f  commit=5c4fa8b  cv_mse=130712.5  test_mse=108359.4
+    run/
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e1_esharma3-5c4fa8b-20261021-204542  run_id=8fcd35b035454004879f587f713f905e  commit=5c4fa8b  cv_mse=3288.2  test_mse=1429.3
+    model-card.md
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e1_ols-5c4fa8b-20261021-204543  run_id=2c95b446c5684118a7297273e035f4a1  commit=5c4fa8b  cv_mse=15051.7  test_mse=7532.0
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e1_ols_log1p_y-5c4fa8b-20261021-204545  run_id=807374d12b9b40238bc48de40e8b6cf5  commit=5c4fa8b  cv_mse=28928.3  test_mse=24167.9
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e1_ols_loglog-5c4fa8b-20261021-204547  run_id=6d4477ea9f2043e1ae43a8399c30ecea  commit=5c4fa8b  cv_mse=3352.6  test_mse=1658.6
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e2_ridge_loglog-5c4fa8b-20261021-204549  run_id=dac7db7836a145418832cf99f6c43768  commit=5c4fa8b  cv_mse=3269.7  test_mse=2230.0
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e3_hist_gb-5c4fa8b-20261021-204617  run_id=653c520ecd81480db072c35038a66290  commit=5c4fa8b  cv_mse=9459.3  test_mse=3559.0
+    run/
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e3_random_forest-5c4fa8b-20261021-204633  run_id=d2b76d96b1de4adbaec0dde3353c202f  commit=5c4fa8b  cv_mse=9034.9  test_mse=2446.3
+    run/
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e4_ols_vproxy-5c4fa8b-20261021-204635  run_id=d5ba1f1f76054e90b990840577dc3516  commit=5c4fa8b  cv_mse=6562.6  test_mse=2662.4
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e4_ols_vproxy_only-5c4fa8b-20261021-204636  run_id=f487643df2d647be816a691555da8478  commit=5c4fa8b  cv_mse=9194.3  test_mse=3164.2
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e4_ridge_loglog_vproxy-5c4fa8b-20261021-204639  run_id=7b5b2700242143b699d715eb95072964  commit=5c4fa8b  cv_mse=3362.8  test_mse=1729.8
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+e4_ridge_vproxy-5c4fa8b-20261021-204641  run_id=60a5eea0ed1a430c998abaa6ad43861f  commit=5c4fa8b  cv_mse=6301.3  test_mse=2640.2
+    run/
+        coefficients.csv
+        config.yaml
+        cv_folds.csv
+        metrics.json
+        model.joblib
+        params.json
+        pred_vs_true.png
+        predictions_oof.csv
+        predictions_test.csv
+        residuals.png
+        tags.json
+
+logged models (mlflow.sklearn.log_model):
+    model  model_id=m-76b85e27aacd4fde8072b107a6af3396  run=e4_ridge_vproxy-5c4fa8b-20261021-204641
+    model  model_id=m-42f1781269f14b6c93d34793479643d6  run=e4_ridge_loglog_vproxy-5c4fa8b-20261021-204639
+    model  model_id=m-f3b522b6be49493c9584918904909c30  run=e4_ols_vproxy_only-5c4fa8b-20261021-204636
+    model  model_id=m-2b7347c60ed54449984bc38dc67bcbd5  run=e4_ols_vproxy-5c4fa8b-20261021-204635
+    model  model_id=m-a4dd71a8d144465caa82ac995e58effe  run=e3_random_forest-5c4fa8b-20261021-204633
+    model  model_id=m-ad2545267f604d2ca2314fbe9850163e  run=e3_hist_gb-5c4fa8b-20261021-204617
+    model  model_id=m-3e81853f37154e7fa348c88863ea1111  run=e2_ridge_loglog-5c4fa8b-20261021-204549
+    model  model_id=m-935f7edb4a5c4883970e7655fc40411e  run=e1_ols_loglog-5c4fa8b-20261021-204547
+    model  model_id=m-73809a13262d4204900213c6b85645e7  run=e1_ols_log1p_y-5c4fa8b-20261021-204545
+    model  model_id=m-0d49101acd9f4f0eb21c18beab99064d  run=e1_ols-5c4fa8b-20261021-204543
+    model  model_id=m-d8d0f3f70c254c20a6c6cc984c3ca960  run=e1_esharma3-5c4fa8b-20261021-204542
+    model  model_id=m-53b2d9f01ae94948876c6262841d0cac  run=e0_median-5c4fa8b-20261021-204540
+    model  model_id=m-21cd2b24713b415992f0d98509cbfcf7  run=e0_mean-5c4fa8b-20261021-204537

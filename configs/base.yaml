@@ -1,0 +1,42 @@
+# Общие параметры всех экспериментов ЛР2.
+# Файлы configs/experiments/*.yaml подключают этот файл через `extends`
+# и переопределяют только признаки и модель.
+
+seed: 42
+
+data:
+  path: data/fish_participant.csv
+  split_path: data/split.json        # замороженные индексы train/test
+
+split:                               # используется только src/make_split.py
+  test_size: 0.2
+  seed: 42
+  stratify: Species
+
+cv:                                  # перекрёстная проверка внутри train
+  n_splits: 5
+  n_repeats: 3
+  seed: 42
+  scoring: neg_mean_squared_error    # MSE в граммах²
+
+features:
+  numeric: [Length1, Length2, Length3, Height, Width]
+  categorical: [Species]
+  volume_proxy: false                # добавить V_proxy = Length3 * Height * Width
+  numeric_transform: none            # none | log | log1p
+  scale: true
+
+target:
+  transform: none                    # none | log | log1p (обратное: exp | expm1)
+
+train:
+  drop_weight_outliers_iqr: false    # правило IQR по Weight, только на обучающей части
+
+selection:
+  # Правило выбора итоговой модели фиксируется до просмотра теста:
+  # минимальная средняя MSE на CV; при разнице меньше одного std — более простая модель.
+  metric: cv_mse_mean
+
+mlflow:
+  tracking_uri: sqlite:///mlflow.db
+  experiment: fishgrow-lab02

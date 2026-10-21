@@ -1,0 +1,13 @@
+extends: configs/base.yaml
+id: E4_ridge_loglog_vproxy
+run_name: e4_ridge_loglog_vproxy
+question: "E4 в лог-лог шкале: добавляет ли log(1 + V_proxy) что-то к гребневой модели E2? Ожидание: почти нет, т.к. log V ~ log L3 + log H + log W."
+features:
+  numeric_transform: log1p
+  volume_proxy: true
+target:
+  transform: log1p
+model:
+  name: ridge
+  grid:
+    alpha: [0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0, 100.0]

@@ -1,0 +1,10 @@
+extends: configs/base.yaml
+id: E1_ols_loglog
+run_name: e1_ols_loglog
+question: "МНК в лог-лог шкале: log(1 + x) для измерений и log(1 + y) для массы (масса ~ размер^k)."
+features:
+  numeric_transform: log1p
+target:
+  transform: log1p
+model:
+  name: linear

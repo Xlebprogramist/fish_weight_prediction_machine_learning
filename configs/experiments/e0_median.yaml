@@ -1,0 +1,7 @@
+extends: configs/base.yaml
+id: E0_median
+run_name: e0_median
+question: "Наивный ориентир: прогноз медианы обучающей выборки."
+model:
+  name: dummy
+  params: {strategy: median}

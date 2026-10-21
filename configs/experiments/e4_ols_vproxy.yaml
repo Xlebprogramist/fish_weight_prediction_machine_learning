@@ -1,0 +1,8 @@
+extends: configs/base.yaml
+id: E4_ols_vproxy
+run_name: e4_ols_vproxy
+question: "Вопрос E4: улучшает ли производный признак V_proxy = L3*H*W линейную модель в граммах? Пара: E1_ols (без) vs E4_ols_vproxy (с)."
+features:
+  volume_proxy: true
+model:
+  name: linear

@@ -1,0 +1,19 @@
+# Окружение ЛР2. Python 3.13.
+# Создание:  python3.13 -m venv .venv && source .venv/bin/activate
+#            pip install -r requirements-course.txt
+# Версии ниже проверены на запуске экспериментов (см. reports/lab02-report.md, раздел 4).
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+PyYAML==6.0.3
+matplotlib==3.11.2
+seaborn==0.13.2
+# учёт экспериментов; точная версия фиксируется в теге запуска env.mlflow
+mlflow>=3.0,<4
+# быстрые проверки
+pytest==9.1.1
+ruff==0.16.9
+# анализ в блокноте (необязательно для train/evaluate)
+jupyterlab

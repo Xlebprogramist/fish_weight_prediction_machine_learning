@@ -1,0 +1,6 @@
+extends: configs/base.yaml
+id: E1_ols
+run_name: e1_ols
+question: "МНК в рекомендованной цепочке ColumnTransformer: все пять измерений + Species, масса в граммах."
+model:
+  name: linear

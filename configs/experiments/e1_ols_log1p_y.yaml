@@ -1,0 +1,8 @@
+extends: configs/base.yaml
+id: E1_ols_log1p_y
+run_name: e1_ols_log1p_y
+question: "Тот же МНК, целевая переменная log(1 + y), обратное преобразование expm1, метрики в граммах."
+target:
+  transform: log1p
+model:
+  name: linear

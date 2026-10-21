@@ -1,0 +1,11 @@
+extends: configs/base.yaml
+id: E3_hist_gb
+run_name: e3_hist_gb
+question: "Нелинейная модель: гистограммный градиентный бустинг, сетка 12 комбинаций x 15 разбиений."
+model:
+  name: hist_gb
+  params: {max_iter: 300, early_stopping: false}
+  grid:
+    learning_rate: [0.05, 0.1]
+    max_depth: [2, 3, null]
+    min_samples_leaf: [5, 10]

@@ -1,0 +1,14 @@
+extends: configs/base.yaml
+id: E1_esharma3
+run_name: e1_esharma3
+question: "Базовое решение исходного проекта на честном разбиении: Species one-hot, log(L3, H, W), log(y), МНК; выброс по IQR удаляется только из обучающей части."
+features:
+  numeric: [Length3, Height, Width]
+  numeric_transform: log
+  scale: false
+target:
+  transform: log
+train:
+  drop_weight_outliers_iqr: true
+model:
+  name: linear

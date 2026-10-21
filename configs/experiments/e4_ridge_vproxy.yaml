@@ -1,0 +1,10 @@
+extends: configs/base.yaml
+id: E4_ridge_vproxy
+run_name: e4_ridge_vproxy
+question: "E4, вариант против мультиколлинеарности: V_proxy + все измерения, гребневая регрессия, alpha по CV."
+features:
+  volume_proxy: true
+model:
+  name: ridge
+  grid:
+    alpha: [0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0, 100.0]
